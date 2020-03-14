@@ -1,4 +1,4 @@
-.App {
+/* .App {
   text-align: center;
 }
 
@@ -14,7 +14,7 @@
 }
 
 .App-header {
-  /* background-color: #282c34; */
+  background-color: #282c34;
   background-color: #1e1e1e;
   min-height: 100vh;
   display: flex;
@@ -23,4 +23,61 @@
   justify-content: center;
   font-size: calc(10px + 2vmin);
   color: white;
+} */
+
+nav,
+main {
+  padding: 24px;
+}
+
+nav {
+  background-color: #f35b5d;
+}
+
+nav a {
+  text-decoration: none;
+}
+
+nav a h2 {
+  color: #ffffff;
+  margin: 0;
+}
+
+main {
+  max-width: 700px;
+  margin: 0 auto;
+}
+
+.card {
+  border-radius: 4px;
+  margin-top: 24px;
+}
+
+.card img {
+  width: 100%;
+}
+
+.card-content {
+  padding: 16px;
+}
+
+.card-content a {
+  display: inline-block;
+  margin-top: 12px;
+}
+
+.containerMainDiv {
+  background-color: #2a292a;
+  padding: 10px;
+}
+
+.containerMainDiv {
+  color: #ffffff;
+}
+
+.linkToViewPage {
+  align-self: flex-end;
+  color: #c1c1c1;
+  text-align: right;
+  align-content: flex-end;
 }
