@@ -81,3 +81,11 @@ main {
   text-align: right;
   align-content: flex-end;
 }
+
+.blankSpaceDiv {
+  height: 50px;
+  background-color: #343334;
+  width: 700px;
+  margin-left: -10px;
+  margin-bottom: -10px;
+}

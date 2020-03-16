@@ -53,6 +53,7 @@ const Home = () => {
                 Continue reading...
               </Link>
             </div>
+            <div className="blankSpaceDiv"></div>
           </section>
         ))}
       </div>
