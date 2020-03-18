@@ -8,41 +8,42 @@ const Post = ({ match }) => {
   const [currentPost, setCurrentPost] = useState();
 
   const slug = match.params.slug;
-  const postSlugs = ["my-first-blog-post", "my-second-blog-post"];
+  const postSlugs = ["my-first-blog-post", "my-second-blog"];
+  console.log(slug);
 
   const postDoesNotExist = postSlugs.indexOf(slug) === -1;
+  // const postDoesNotExist = !currentPost;
   if (postDoesNotExist) {
     return <Redirect to="/404" />;
   }
 
-  //   if (loading) {
-  //     return <h1>Loading...</h1>;
-  //   }
+  if (loading && !currentPost) {
+    console.log("doing some shit");
 
-  //   if (loading) {
-  //     console.log("doing some shit");
-
-  //     getFirebase()
-  //       .database()
-  //       .ref()
-  //       .child(`/posts/${slug}`)
-  //       .once("value")
-  //       .then(snapshot => {
-  //         if (snapshot.val()) {
-  //           setCurrentPost(snapshot.val());
-  //           console.log(snapshot.val());
-  //         }
-  //         setLoading(false);
-  //       });
-  //   }
-
+    getFirebase()
+      .database()
+      .ref()
+      .child(`/posts/${slug}`)
+      .once("value")
+      .then(snapshot => {
+        if (snapshot.val()) {
+          setCurrentPost(snapshot.val());
+          console.log(snapshot.val());
+        }
+        setLoading(false);
+      });
+  }
+  if (loading) {
+    return <h1>Loading...</h1>;
+  }
   return (
-    // <img src={currentPost.coverImage} alt={currentPost.coverImageAlt}>
-    //   <h1>{currentPost.title}</h1>
-    //   <em>{currentPost.datePretty}</em>
-    //   <p dangerouslySetInnerHTML={{ __html: currentPost.content }}></p>
-    // </img>
-    <h2 style={{ color: "#ffffff" }}>We are working on this page</h2>
+    <div className="containerMainDiv card">
+      <img src={currentPost.coverImage} alt={currentPost.coverImageAlt} />
+      <h1>{currentPost.title}</h1>
+      <em>{currentPost.datePretty}</em>
+      <p dangerouslySetInnerHTML={{ __html: currentPost.content }}></p>
+    </div>
+    // <h2 style={{ color: "#ffffff" }}>We are working on this page</h2>
   );
 };
 
